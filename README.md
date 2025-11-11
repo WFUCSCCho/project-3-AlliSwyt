@@ -102,8 +102,10 @@ Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (already sorted)
 ![img.png](img.png) = bubbleSort
 ![img_6.png](img_6.png) = transposition Sort
 ![img_12.png](img_12.png) = mergeSort -- forgot axis titles sorry, it's the same as all others with x axis numLines and y runTime (ns)
-![img_15.png](img_15.png) = quickSort
+![img_15.png](img_15.png) = quickSort THIS WAS ORIGINALLY DONE WITH PIVOT = RIGHT; I changed it later after we went over it in class, and thought the
+                            difference in results was interesting so I will add graphs for both
 ![img_18.png](img_18.png) = heapSort
+![img_21.png](img_21.png) = quickSort (estimated mean pivot)
 
 Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (shuffled):
 ![img_1.png](img_1.png) = bubbleSort
@@ -111,6 +113,7 @@ Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (shuffled):
 ![img_13.png](img_13.png) = mergeSort
 ![img_16.png](img_16.png) = quickSort
 ![img_19.png](img_19.png) = heapSort
+![img_22.png](img_22.png) = quickSort (estimated mean pivot)
 
 Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (reversed):
 ![img_2.png](img_2.png) = bubbleSort
@@ -118,6 +121,7 @@ Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (reversed):
 ![img_14.png](img_14.png) = mergeSort
 ![img_17.png](img_17.png) = quickSort
 ![img_20.png](img_20.png) = heapSort
+![img_23.png](img_23.png) = quickSort (estimated mean pivot)
 
 Bubble Sort and Odd-Even Transposition Sort comparison (already sorted):
 ![img_3.png](img_3.png) = bubbleSort

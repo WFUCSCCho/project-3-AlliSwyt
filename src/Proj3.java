@@ -28,12 +28,15 @@ public class Proj3 {
     public static <T extends Comparable<? super T>> void mergeSort(ArrayList<T> a, int left, int right) {
         if (left < right) {
             int middle = (left + right) / 2;
+            //recursively mergeSorts each half
             mergeSort(a, left, middle); mergeSort(a, middle+1, right);
             merge(a, left, middle, right);
         }
     }
 
+    //merge helper method
     public static <T extends Comparable<? super T>> void merge(ArrayList<T> a, int left, int mid, int right) {
+        //creates temporary left and right arrays to merge
         ArrayList<T> tempLeft = new ArrayList<>();
         for (int i = left; i <= mid; i++) {
             tempLeft.add(a.get(i));
@@ -43,6 +46,7 @@ public class Proj3 {
             tempRight.add(a.get(i));
         }
 
+        //merges the two arrays into the section of the array
         int i = 0; int j = 0; int k = left;
         while (i < tempLeft.size() && j < tempRight.size()) {
             if (tempLeft.get(i).compareTo(tempRight.get(j)) <= 0) {
@@ -66,18 +70,33 @@ public class Proj3 {
     }
 
     public static <T extends Comparable<? super T>> int partition (ArrayList<T> a, int left, int right) {
-        int pivot = right;
+        int mid = left + (right - left) / 2;
+        //places the left, center, and right in increasing order
+        if (a.get(mid).compareTo(a.get(left)) < 0) {
+            swap(a, left, mid);
+        }
+        if (a.get(right).compareTo(a.get(left)) < 0) {
+            swap(a, left, right);
+        }
+        if (a.get(right).compareTo(a.get(mid)) < 0) {
+            swap(a, mid, right);
+        }
+
+        //place pivot at position right - 1
+        swap(a, mid, right - 1);
+        int pivot = right - 1;
         int j = left;
-        for (int i = left; i < right; i++) {
+        for (int i = left; i < right - 1; i++) {
             if (a.get(i).compareTo(a.get(pivot)) <= 0) {
                 swap(a, j, i);
                 j++;
             }
         }
-        swap(a, j, right);
+        swap(a, j, right - 1);
         return j;
     }
 
+    //swaps two indexes in an arrayList
     static <T extends Comparable<? super T>> void swap(ArrayList<T> a, int i, int j) {
         T temp = a.get(i);
         a.set(i, a.get(j));
@@ -350,7 +369,7 @@ public class Proj3 {
 
         //QUICK SORT TEST SECTION
 
-        /*for (int i = 0; i < numLines; i+=100) {
+        for (int i = 0; i < numLines; i+=100) {
             Collections.sort(animeAL);
 
             long startTime = System.nanoTime();
@@ -377,14 +396,13 @@ public class Proj3 {
         for (int i = 0; i < numLines; i++) {
             writeToFile(animeAL.get(i).toString(), "./sorted.txt");
         }
-         */
 
 
         //writeToFile("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", "./analysis.csv");
 
         //HEAP SORT TEST SECTION
 
-        for (int i = 0; i < numLines; i+=100) {
+        /*for (int i = 0; i < numLines; i+=100) {
             Collections.sort(animeAL);
 
             long startTime = System.nanoTime();
@@ -410,7 +428,7 @@ public class Proj3 {
         heapSort(animeAL, 0, numLines - 1);
         for (int i = 0; i < numLines; i++) {
             writeToFile(animeAL.get(i).toString(), "./sorted.txt");
-        }
+        }*/
 
 
     }
