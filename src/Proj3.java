@@ -19,7 +19,7 @@ of comparisons made will also be printed.
 NOTE - If you run all of the program at once it will take a very long time. Thus many portions of it
 are commented out to be run one at a time.
 @author: Alli Swyt
-@date: September 25, 2025
+@date: November 13, 2025
 ∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗*/
 
 public class Proj3 {
@@ -288,11 +288,15 @@ public class Proj3 {
 
         //test to check that bubbleSort can sort properly
         Collections.shuffle(animeAL);
-        bubbleSort(animeAL, numLines - 1);
-        for (int i = 0; i < numLines; i++) {
-            writeToFile(animeAL.get(i).toString(), "./sorted.txt");
-        }
-         */
+        bubbleSort(animeAL, numLines);
+        printArrayList(animeAL, numLines);
+        Collections.sort(animeAL);
+        bubbleSort(animeAL, numLines);
+        printArrayList(animeAL, numLines);
+        Collections.sort(animeAL, Collections.reverseOrder());
+        bubbleSort(animeAL, numLines);
+        printArrayList(animeAL, numLines);
+        */
 
         //writeToFile("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", "./analysis.csv");
 
@@ -321,12 +325,16 @@ public class Proj3 {
 
         //test to check that transpositionSort can sort properly
         Collections.shuffle(animeAL);
-        transpositionSort(animeAL, numLines - 1);
-        for (int i = 0; i < numLines; i++) {
-            writeToFile(animeAL.get(i).toString(), "./sorted.txt");
-        }
+        transpositionSort(animeAL, numLines);
+        printArrayList(animeAL, numLines);
+        Collections.sort(animeAL);
+        transpositionSort(animeAL, numLines);
+        printArrayList(animeAL, numLines);
+        Collections.sort(animeAL, Collections.reverseOrder());
+        transpositionSort(animeAL, numLines);
+        printArrayList(animeAL, numLines);
 
-         */
+        */
 
 
         //writeToFile("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", "./analysis.csv");
@@ -358,11 +366,15 @@ public class Proj3 {
         //test to check that mergeSort can sort properly
         Collections.shuffle(animeAL);
         mergeSort(animeAL, 0, numLines - 1);
-        for (int i = 0; i < numLines; i++) {
-            writeToFile(animeAL.get(i).toString(), "./sorted.txt");
-        }
+        printArrayList(animeAL, numLines);
+        Collections.sort(animeAL);
+        mergeSort(animeAL, 0, numLines - 1);
+        printArrayList(animeAL, numLines);
+        Collections.sort(animeAL, Collections.reverseOrder());
+        mergeSort(animeAL, 0, numLines - 1);
+        printArrayList(animeAL, numLines);
 
-         */
+        */
 
 
         //writeToFile("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", "./analysis.csv");
@@ -390,13 +402,16 @@ public class Proj3 {
             writeToFile(i + "," + quickSortTime + "," + i + "," + quickSortTimeShuffled + "," + i + "," + quickSortTimeReversed + ","  +",quick Sort Time(already sorted), time shuffled, time reversed", "./analysis.csv");
         }
 
-        //test to check that quickSort can sort properly
+        //tests to check that quickSort can sort properly
         Collections.shuffle(animeAL);
         quickSort(animeAL, 0, numLines - 1);
-        for (int i = 0; i < numLines; i++) {
-            writeToFile(animeAL.get(i).toString(), "./sorted.txt");
-        }
-
+        printArrayList(animeAL, numLines);
+        Collections.sort(animeAL);
+        quickSort(animeAL, 0, numLines - 1);
+        printArrayList(animeAL, numLines);
+        Collections.sort(animeAL, Collections.reverseOrder());
+        quickSort(animeAL, 0, numLines - 1);
+        printArrayList(animeAL, numLines);
 
         //writeToFile("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", "./analysis.csv");
 
@@ -426,9 +441,14 @@ public class Proj3 {
         //test to check that heapSort can sort properly
         Collections.shuffle(animeAL);
         heapSort(animeAL, 0, numLines - 1);
-        for (int i = 0; i < numLines; i++) {
-            writeToFile(animeAL.get(i).toString(), "./sorted.txt");
-        }*/
+        printArrayList(animeAL, numLines);
+        Collections.sort(animeAL);
+        heapSort(animeAL, 0, numLines - 1);
+        printArrayList(animeAL, numLines);
+        Collections.sort(animeAL, Collections.reverseOrder());
+        heapSort(animeAL, 0, numLines - 1);
+        printArrayList(animeAL, numLines);
+        */
 
 
     }
@@ -463,6 +483,13 @@ public class Proj3 {
             catch (IOException e) {
                 System.out.println("Error in clearing the file");
             }
+        }
+    }
+
+    //method to print the arrayList, use if you'd like to individually test and check that the methods are sorting properly, which I did in testing
+    public static <T extends Comparable<? super T>> void printArrayList(ArrayList<T> a, int numLines) {
+        for (int i = 0; i < numLines; i++) {
+            writeToFile(a.get(i).toString(), "./sorted.txt");
         }
     }
 }
