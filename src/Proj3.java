@@ -215,7 +215,7 @@ public class Proj3 {
             System.exit(3);
         }
         if (numLines <= 0 || numLines > 12773) {
-            System.out.println("Argument value was out of bounds for this data set. Please input a number from 100 to 12773. Exiting program.");
+            System.out.println("Argument value was out of bounds for this data set. Please input a number from 1 to 12773. Exiting program.");
             System.exit(4);
         }
 
