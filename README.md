@@ -83,6 +83,9 @@ shuffled, and reversed lists to the screen in a human-readable format (i.e., nic
 file named `analysis.txt` in CSV format. Each time the program runs, it will append the timing results to 
 `analysis.txt`. 
 
+## NOTE from Alli -- I did not follow the instructions here because I didn't want to have to manually clear the analysis file for each run, 
+## so I set it to not append but clear after each run of the program
+
 In addition, your program will print out the sorted lists to a file named `sorted.txt`. Each time the program runs, it 
 will overwrite the previous sorted lists in `sorted.txt`.
 
@@ -96,17 +99,41 @@ vs. N for each case. Take a screenshot of your graph and put them here by modify
 it to this repository.
 
 Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (already sorted):
-![image](https://github.com/user-attachments/assets/76f103c8-8c02-4bec-9966-99568f2effb6)
+![img.png](img.png) = bubbleSort
+![img_6.png](img_6.png) = transposition Sort
+![img_12.png](img_12.png) = mergeSort -- forgot axis titles sorry, it's the same as all others with x axis numLines and y runTime (ns)
+![img_15.png](img_15.png) = quickSort THIS WAS ORIGINALLY DONE WITH PIVOT = RIGHT; I changed it later after we went over it in class, and thought the
+                            difference in results was interesting so I will add graphs for both
+![img_18.png](img_18.png) = heapSort
+![img_21.png](img_21.png) = quickSort (estimated mean pivot)
 
 Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (shuffled):
+![img_1.png](img_1.png) = bubbleSort
+![img_7.png](img_7.png) = transposition sort
+![img_13.png](img_13.png) = mergeSort
+![img_16.png](img_16.png) = quickSort
+![img_19.png](img_19.png) = heapSort
+![img_22.png](img_22.png) = quickSort (estimated mean pivot)
 
 Bubble Sort, Merge Sort, Quick Sort, and Heap Sort running time (reversed):
+![img_2.png](img_2.png) = bubbleSort
+![img_8.png](img_8.png) = transposition sort
+![img_14.png](img_14.png) = mergeSort
+![img_17.png](img_17.png) = quickSort
+![img_20.png](img_20.png) = heapSort
+![img_23.png](img_23.png) = quickSort (estimated mean pivot)
 
 Bubble Sort and Odd-Even Transposition Sort comparison (already sorted):
+![img_3.png](img_3.png) = bubbleSort
+![img_9.png](img_9.png) = transposition sort
 
 Bubble Sort and Odd-Even Transposition Sort comparison (shuffled):
+![img_4.png](img_4.png) = bubbleSort
+![img_10.png](img_10.png) = transposition sort
 
 Bubble Sort and Odd-Even Transposition Sort comparison (reversed):
+![img_5.png](img_5.png) = bubbleSort
+![img_11.png](img_11.png) = transposition sort
 
 ## Submission:
 
